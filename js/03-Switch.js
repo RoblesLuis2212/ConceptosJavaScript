@@ -23,6 +23,7 @@ let Saldo = 10000; //Se define un saldo por defecto
 
 //Agregamos una estructura switch para evaluar las opciones
 switch(opcion){
+    case "saldo":
     case "1":
         document.writeln("Su saldo es de $"+Saldo+"");
         break;
