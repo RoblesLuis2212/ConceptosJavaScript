@@ -19,8 +19,9 @@
                     }
                     */
 const opcion = prompt("Seleccione una opcion: 1- consultar saldo 2- ingresar dinero 3- extraer dinero");
-let Saldo = 10000;
+let Saldo = 10000; //Se define un saldo por defecto
 
+//Agregamos una estructura switch para evaluar las opciones
 switch(opcion){
     case "1":
         document.writeln("Su saldo es de $"+Saldo+"");
@@ -37,11 +38,11 @@ switch(opcion){
         break;
     case "3":
         const monto_extraccion = parseFloat(prompt("Ingrese el monto a extraer: "));
-        if (monto_extraccion > Saldo){
-            alert("Fondos insuficientes");
+        if (monto_extraccion <= Saldo){
+            Saldo = Saldo - monto_extraccion;
         }
         else{
-            Saldo = Saldo - monto_extraccion;
+            alert("Fondos insuficientes");
         }
         break;
     default:
