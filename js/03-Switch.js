@@ -40,6 +40,7 @@ switch(opcion){
         const monto_extraccion = parseFloat(prompt("Ingrese el monto a extraer: "));
         if (monto_extraccion <= Saldo){
             Saldo = Saldo - monto_extraccion;
+            alert(`Extraccion exitosa, tu saldo disponible es ${Saldo}`);
         }
         else{
             alert("Fondos insuficientes");
