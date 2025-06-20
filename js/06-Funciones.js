@@ -10,6 +10,11 @@ function Saludar() {
 function Saludar_Persona(nombre, apellido) {
   document.writeln(`<p>Hola ${nombre} ${apellido}</p>`);
 }
+//Funciones que retornan un valor
+function Mostrar_Cancion(nombre_cancion) {
+  const Cancion = "La cancion ingresada es: " + nombre_cancion;
+  return Cancion;
+}
 
 //Expresion de funcion
 
@@ -26,3 +31,8 @@ Saludar();
 const Nombre = prompt("Ingrese su nombre: ");
 const Apellido = prompt("Ingrese su apellido: ");
 Saludar_Persona(Nombre, Apellido);
+
+const texto_Generado = Mostrar_Cancion("Crimen");
+
+document.writeln(Mostrar_Cancion("Flaca"));
+document.writeln(`El texto generado fue ${texto_Generado}`);
