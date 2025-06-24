@@ -1,47 +1,58 @@
-//Como declarar un array
-//Array vacio
-const Peliculas = [];
+const mostrarCanciones = (titulo) => {
+  document.writeln(
+    `<h2 class='mt-3'>${titulo} - cantidad de elementos ${canciones.length}</h2>`
+  );
+  document.writeln("<ul class='list-group'>");
+  for (let i = 0; i < canciones.length; i++) {
+    document.writeln(`<li class="list-group-item">${canciones[i]}</li>`);
+  }
+  document.writeln("</ul>");
+};
 
-// Array de canciones
-const Canciones = ["Batidora", 2010, true, "De Musica Ligera", "Mujer Amante"];
-console.log(Peliculas);
-console.log(Canciones);
-document.writeln(Canciones);
-//Mostrar elemento especifico del array
-document.writeln(`<p>Mostrar un solo elemento del array: ${Canciones[3]}</p>`);
+// como declarar un array
+// array vacio
+const peliculas = [];
 
-//Recorrer Array y mostrar contenido
-document.writeln(`<h2>Mostrar array de canciones</h2>`);
-document.writeln(`<ul class="list-group">`);
-for (let i = 0; i < Canciones.length; i++) {
-  document.writeln(`<li>${Canciones[i]}</li>`);
-}
-document.writeln("</ul>");
+// array de canciones
+const canciones = ["Batidora", 2010, true, "musica ligera", "mujer amante"];
 
-//Agregar elemento al inicio del array
-Canciones.unshift("Cancion para mi muerte", "Sobredosis de TV");
-document.writeln(Canciones);
+// mostrar un array
+console.log(peliculas);
+console.log(canciones);
+document.writeln(canciones);
+const indice = 0;
+document.writeln(`<p>Mostrar un solo elemento del array: ${canciones[3]}</p>`);
+document.writeln(
+  `<p>Mostrar el primer elemento del array: ${canciones[indice]}</p>`
+);
+document.writeln(
+  `<p>Mostrar el elemento de la posicion 30 del array: ${canciones[30]}</p>`
+);
 
-//Agregar elemento al final del array
-Canciones.push("Like Stone");
-document.writeln(Canciones);
+mostrarCanciones("Mostrar el array de canciones");
+// agregar elementos al array
 
-//Agragar elemento en posicion especifica del array
-Canciones.splice(4, 0, "Cuando Llegue el Alba");
-document.writeln(Canciones);
+canciones.unshift(false, "like stone");
+mostrarCanciones("Agregar un elemento al inicio del array");
 
-//Eliminar primer elemento del array
-Canciones.shift();
-console.log(Canciones);
+canciones.push("like a Rolling stone");
+mostrarCanciones("Agregar un elemento al final del array");
 
-//Eliminar ultimo elemento del array
-Canciones.pop();
-console.log(Canciones);
+canciones.splice(4, 0, "feel Good inc");
+mostrarCanciones("Agregar un elemento en el medio del array");
 
-Canciones.splice(2, 3); //Desde la posicion 2 del array se elimina 3 elementos
-Canciones.splice(2); //Desde la posicion 2 del array elimina todos los elementos
-Canciones.splice(Canciones.length - 1, 1); //Opcion para eliminar el ultimo elemento del array
+//borrar elementos del array
+canciones.shift();
+mostrarCanciones("Borrar un elemento del inicio del array");
 
-//Modificar un elemento del array
-Canciones[3] = "Rasguñan las piedras";
-console.log(Canciones);
+canciones.pop();
+mostrarCanciones("Borrar un elemento del final del array");
+canciones.splice(2, 1);
+// canciones.splice(2,3) //desde la posicion 2 del array borro 3 elementos
+// canciones.splice(2) //borrar todo desde la posicion 2 del array
+// canciones.splice( canciones.length - 1 ,1)
+mostrarCanciones("Borrar un elemento del medio del array");
+
+//modificar elementos del array
+canciones[3] = "Sobredosis de TV";
+mostrarCanciones("Modificar un elemento del array");
