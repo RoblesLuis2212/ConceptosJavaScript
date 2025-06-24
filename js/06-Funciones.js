@@ -17,16 +17,31 @@ function Mostrar_Cancion(nombre_cancion) {
 }
 
 //Expresion de funcion
+// const saludar = function () {
+//   document.writeln("Hola Mundo!!");
+// };
 
+// const Sumar = function (numero1, numero2) {
+//   const Resultado = numero1 + numero2;
+//   document.writeln(`<p>El resultado de la suma es ${Resultado}</p>`);
+// };
 //Arrow function, funciones flecha
+const Sumar = (number1, number2) => {
+  const Resultado = number1 + number2;
+  console.log("El resultado de la suma es: " + Resultado);
+};
 
 //Invocar a la funcion
+Sumar(10, 15);
 Saludar();
 Saludar();
 Saludar();
-Saludar();
-Saludar();
-
+// saludar();
+//Uso de la funcion de expresion sumar
+const num1 = parseInt(prompt("Ingrese el primer numero: "));
+const num2 = parseInt(prompt("Ingrese el segundo numero: "));
+Sumar(num1, num2);
+Sumar(5, 20);
 //Solicitamos datos al usuario y pasamos los parametros que solicita la funcion
 const Nombre = prompt("Ingrese su nombre: ");
 const Apellido = prompt("Ingrese su apellido: ");
