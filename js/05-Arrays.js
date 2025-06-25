@@ -56,3 +56,47 @@ mostrarCanciones("Borrar un elemento del medio del array");
 //modificar elementos del array
 canciones[3] = "Sobredosis de TV";
 mostrarCanciones("Modificar un elemento del array");
+
+//Metodos extras para trabajar con arrays
+const nombreCancion = prompt("Ingrese un nombre de canción: ");
+//find
+const cancionAlmacenada = canciones.find(
+  (cancion) => nombreCancion === cancion
+);
+// console.log(cancionAlmacenada);
+// if (cancionAlmacenada) {
+//   document.writeln(`<p>La cancion buscada existe</p>`);
+// } else {
+//   document.writeln(`<p>La cancion buscada no existe</p>`);
+// }
+//Operador ternario ? si se cumple la condicion hago esto : si no se cumple la condicion hago esto
+const respuesta = cancionAlmacenada
+  ? "La cancion existe"
+  : "La cancion NO existe";
+document.writeln(`<p>${respuesta}<p/>`);
+
+//findIndex
+const indiceCancion = canciones.findIndex(
+  (cancion) => nombreCancion === cancion
+);
+
+const respuestaFind =
+  indiceCancion > -1
+    ? "La cancion esta en el indice " +
+      indiceCancion +
+      " del array de canciones"
+    : "La cancion NO exite";
+console.log(respuestaFind);
+
+//Filter
+const cancionesFiltradas = canciones.filter((cancion) => cancion.length >= 13);
+
+//Map
+document.writeln(`<ul class="list-group">`);
+cancionesFiltradas.map((cancion, indice) =>
+  document.writeln(
+    `<li class="list-group-item">${cancion} - indice: ${indice}</li>`
+  )
+);
+
+document.writeln(`</ul>`);
