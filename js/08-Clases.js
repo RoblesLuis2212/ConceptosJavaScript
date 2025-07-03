@@ -87,6 +87,30 @@ class Alumno extends Persona {
     this.asistencia = 0;
     this.#notas = [];
   }
+  get getNotas() {
+    return this.#notas;
+  }
+  set setNotas(nuevaNota) {
+    this.#notas.push(nuevaNota);
+  }
+  //Agregar metodos
+  MostrarDatos() {
+    document.writeln(`<ul class="list-group">
+      <li class="list-group-item">Nombre y Apellido: ${this.nombre} ${this.apellido} </li>
+      <li class="list-group-item">Email: ${this.getEmail}</li>
+      <li class="list-group-item">Telefono: ${this.telefono}</li>
+      <li class="list-group-item">Comision: ${this.comision}</li>
+      <li class="list-group-item">Notas: ${this.getNotas}</li>
+      </ul>
+      `);
+  }
+  calcularPromedio() {
+    let suma = 0;
+    for (let i = 0; i < this.#notas.length; i++) {
+      suma += this.#notas[i];
+      return suma / this.#notas.length;
+    }
+  }
 }
 //Logica del programa
 //Instanciamos la clase Persona y creamos un objeto
@@ -123,3 +147,31 @@ document.writeln(`<p>Consultar email: ${maxi.getEmail}</p>`);
 
 maxi.setEmail = "maxi@gmail.com";
 maxi.MostrarDatos();
+
+//Crear objeto alumno
+const paula = new Alumno(
+  "Paula",
+  "Gramajo",
+  "02/05/200",
+  "Buenos Aires",
+  "42765911",
+  "paugramajo@gmail.com",
+  "789798454",
+  "3887826131",
+  "C13",
+  "Full Stack"
+);
+console.log(paula);
+//Usamos el metodo set de la clase alumno para modificarlo
+paula.setEmail = "paulita@gmail.com";
+document.writeln(`<p>Nuevo email: ${paula.getEmail}</p>`);
+paula.setNotas = 8;
+paula.setNotas = 10;
+
+//Volvemos a mostrar los datos
+paula.MostrarDatos();
+document.writeln(
+  `<p>El promedio de ${paula.apellido} ${
+    paula.nombre
+  } es ${paula.calcularPromedio()}</p>`
+);
